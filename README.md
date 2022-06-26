@@ -22,3 +22,53 @@ $ docker tag docker101tutorial nosf6842/docker101tutorial
 # docker push [업로드할 태그 이름]
 $ docker push nosf6842/docker101tutorial
 ```
+
+## centos
+
+```bash
+# Setting APM
+$ docker pull centos:centos7
+$ docker run -it -p 80:80 --name docker_apm centos:centos7
+$ yum install httpd
+
+# 아파치 실행
+$ sudo systemctl start httpd
+bash: sudo: command not found
+
+# sudo 패키지 설치
+$ yum install sudo
+
+# 다시 아파치 실행
+$ sudo systemctl start httpd
+Failed to get D-Bus connection: Operation not permitted # ...ㅂㄷㅂㄷ
+```
+
+## ubuntu
+
+```bash
+$ docker pull ubuntu:18.04
+$ docker run -it -p 80:80 --name docker_apm ubuntu:18.04
+$ apt update -y
+
+# 아파치 설치
+$ apt install apache2 -y
+
+# 서비스 실행 / 재시작 / 종료
+$ service apache2 start # /etc/init.d
+$ service apache2 restart
+$ service apache2 stop
+
+$ apt install vim -y # 기본적인 편집기도 존재하지 않는다...
+
+# mysql 설치
+$ apt install mysql-server -y
+
+# mysql 실행
+$ service mysql start
+
+# mysql 보안 스크립트 실행
+$ mysql_secure_installation
+
+# php 설치
+$ apt install php libapache2-mod-php php-mysql -y
+```
