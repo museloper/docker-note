@@ -72,3 +72,10 @@ $ mysql_secure_installation
 # php 설치
 $ apt install php libapache2-mod-php php-mysql -y
 ```
+
+## build
+
+```bash
+# docker build -t [생성할 이미지 이름] [도커파일 경로]
+$ docker build -t docker_apm .
+```
