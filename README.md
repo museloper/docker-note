@@ -68,6 +68,12 @@ $ service mysql start
 
 # mysql 보안 스크립트 실행
 $ mysql_secure_installation
+# 비밀번호 복잡도 체크 여부
+# root 비밀번호 설정
+# 익명 사용자 삭제 여부
+# root 원격 접속 차단 여부
+# test db 접속 정보 삭제 여부
+# root 비밀번호 및 권한 적용
 
 # php 설치
 $ apt install php libapache2-mod-php php-mysql -y
@@ -77,5 +83,11 @@ $ apt install php libapache2-mod-php php-mysql -y
 
 ```bash
 # docker build -t [생성할 이미지 이름] [도커파일 경로]
-$ docker build -t docker_apm .
+$ docker build -t docker_ubuntu_apm .
+```
+
+## run
+
+```bash
+$ docker run --name docker_apm -it -p 80:80 -p 3306:3306 docker_ubuntu_apm
 ```
