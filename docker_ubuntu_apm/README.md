@@ -1,4 +1,4 @@
-## Settings
+## Settings (서버)
 
 ```bash
 # $APACHE_HOME/apache2.conf
@@ -32,4 +32,26 @@ post_max_size = 2048M
 memory_limit = 2048M
 ## 숏코드 사용
 short_open_tag = On
+```
+
+## Settings (DB)
+
+```bash
+# 보안설정
+$ mysql_secure_installation
+
+# $MYSQL_HOME/mysql.conf.d/mysqld.cnf
+bind-address = 0.0.0.0
+```
+
+```sql
+-- mysql -u root -p
+
+-- 유저 생성
+mysql> CREATE USER 'user_name'@'%' IDENTIFIED BY 'user_password';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'user_name'@'%' WITH GRANT OPTION;
+mysql> FLUSH PRIVILEGES;
+
+-- 데이터베이스 생성
+mysql> CREATE DATABASE yes_j default CHARACTER SET UTF8;
 ```

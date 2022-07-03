@@ -23,4 +23,5 @@ RUN apt install php libapache2-mod-php php-mysql -y
 COPY index.php /var/www/html
 COPY ./config/000-default.conf /etc/apache2/sites-available/
 COPY ./config/apache2.conf /etc/apache2/
-COPY ./config/php.ini /etc/php/7.2/apache2
+COPY ./config/php.ini /etc/php/7.2/apache2/
+COPY ./config/mysqld.cnf /etc/mysql/mysql.conf.d/
