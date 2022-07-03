@@ -19,9 +19,12 @@ RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime
 
 # php를 설치할 때 timezone에 대한 질문을 하기 때문에 위와 같이 timezone 설정을 선행한 후에 설치
 RUN apt install php libapache2-mod-php php-mysql -y
+RUN apt install expect -y
+RUN mkdir /root/src
 
 COPY index.php /var/www/html
 COPY ./config/000-default.conf /etc/apache2/sites-available/
 COPY ./config/apache2.conf /etc/apache2/
 COPY ./config/php.ini /etc/php/7.2/apache2/
 COPY ./config/mysqld.cnf /etc/mysql/mysql.conf.d/
+COPY ./config/init /root/src/
