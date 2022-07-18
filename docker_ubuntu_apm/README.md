@@ -18,7 +18,7 @@
 AddType application/x-httpd-php .php4 .php .phtml .ph .inc .html .htm
 
 # $APACHE_HOME/sites-available/000-default.conf
-DocumentRoot /var/www/html
+DocumentRoot /var/www/yes-j
 
 # $PHP_HOME/apache2/php.ini
 ## 타임존
@@ -53,5 +53,5 @@ mysql> GRANT ALL PRIVILEGES ON *.* TO 'user_name'@'%' WITH GRANT OPTION;
 mysql> FLUSH PRIVILEGES;
 
 -- 데이터베이스 생성
-mysql> CREATE DATABASE yes_j default CHARACTER SET UTF8;
+mysql> CREATE DATABASE database_name default CHARACTER SET UTF8;
 ```
